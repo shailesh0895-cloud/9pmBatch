@@ -1,0 +1,10 @@
+---
+-  name: creating first server
+   hosts: localhost
+   become: true
+   tasks:
+ - name: server
+   apt:  
+   name: ubuntu:24.04
+     
+
