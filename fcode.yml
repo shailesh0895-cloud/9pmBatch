@@ -5,6 +5,6 @@
    tasks:
  - name: server
    apt:  
-   name: ubuntu:24.04
+   name: nginx
      
 
