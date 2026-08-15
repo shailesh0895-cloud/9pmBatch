@@ -1,0 +1,7 @@
+---
+- name: Crating Web Server
+  hosts: Webhost
+  become: true
+  tasks:
+ - name: I am inline policy
+
