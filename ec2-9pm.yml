@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: ec2 creation 
+
+Resources:
+  MyInstanceSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: ssh port
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 8080
+          ToPort: 8080
+          CidrIp: 0.0.0.0/0
+
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-09d88f7c4c272b0c5
+      InstanceType: t2.micro
+      KeyName: rahul-9utc
+      SecurityGroupIds:
+        - !Ref MyInstanceSecurityGroup
+      Tags:
+        - Key: Name
+          Value: 9pm-srv
+
